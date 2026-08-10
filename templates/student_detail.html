@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <h1 class="mt-4">{{title}}</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">{{title}} | {{dete|date:"f d, Y"}}</li>
+        </ol>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="card-title">Student Detail</h5>
+            </div>
+            <div class="card-body">
+                <p>ID: {{student.stu_id}}</p>
+                <p>Name: {{student.prefix_name}} {{student.fname}} {{student.lname}}</p>
+                <p>Major: {{student.major}}</p>
+            </div>
+        </div>
+
+        <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+{% endblock %}
